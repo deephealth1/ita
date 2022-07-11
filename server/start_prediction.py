@@ -143,9 +143,9 @@ def input_mapping_prediction(inputfile):
     # print('保存文件成功')
     active_porb=out[0]
     inactive_porb=1-active_porb
-    elements = ['雌激素活性概率值', '']
+    # elements = ['雌激素活性概率值', '']
     weight1 = [active_porb,inactive_porb]
-    cs = ['#D3545F','#9EA0A1']
+    cs = ['#D3545F','#FCE6C9']
     outer_cs = cs
     inner_cs = cs
     fig = plt.figure(figsize=(7, 7))
@@ -171,7 +171,7 @@ def input_mapping_prediction(inputfile):
                                                     'linestyle': '-'
                                                     },
                                         # 锲形块标签文本和数据标注文本的字体属性
-                                        textprops=dict(color='k',  #  字体颜色
+                                        textprops=dict(color='#FCE6C9',  #  字体颜色
                                                         fontsize=14,
                                                         family='Arial'))
     # 绘制中心空白区域
@@ -180,15 +180,15 @@ def input_mapping_prediction(inputfile):
             colors=[fig.get_facecolor()])
     
     # 设置图例
-    plt.legend(handles=wedges1,
-            loc='best',
-            labels=elements,
-            title='',
-            facecolor = fig.get_facecolor(),    # 图例框的填充颜色
-            edgecolor='darkgray',
-            fontsize=12)
+    # plt.legend(handles=wedges1,
+    #         loc='best',
+    #         labels=elements,
+    #         title='',
+    #         facecolor = fig.get_facecolor(),    # 图例框的填充颜色
+    #         edgecolor='darkgray',
+    #         fontsize=12)
     
-    plt.title(label='化学品雌激素受体激活活性预测',
+    plt.title(label='基于深度神经网络模型的雌激素受体激活活性预测',
             # color='blue',
             size=18,)
     plt.text(-0.75,-1.15,'≥24%时即认为具有雌激素活性', ha='left',fontsize=16,wrap=True)
